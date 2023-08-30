@@ -6,7 +6,8 @@ public class PlayerBullet : MonoBehaviour
 {
     // Start is called before the first frame update
     public Rigidbody2D rb;
-    int dir = 1;
+    int speed = 5;
+   
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -16,20 +17,20 @@ public class PlayerBullet : MonoBehaviour
         
     }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        rb.velocity = new Vector2(0, dir * 6);
+        rb.velocity = Vector2.up * speed;
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Enemy")
         {
             other.GetComponent<EnemyController>().Damage();
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
     private void OnBecameInvisible()
     {
-        Destroy(gameObject);
+       gameObject.SetActive(false);
     }
 }

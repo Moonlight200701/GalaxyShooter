@@ -251,6 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5135923672780489886, guid: b1d02e23bc8fd464e94234e877b6972c, type: 3}
   attackInterval: 0.12
+  bulletPosition: {fileID: 839293039}
 --- !u!1 &849500411
 GameObject:
   m_ObjectHideFlags: 0
@@ -5161,6 +5162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5135923672780489886, guid: b1d02e23bc8fd464e94234e877b6972c, type: 3}
   attackInterval: 0.12
+  bulletPosition: {fileID: 921572699}
 --- !u!1 &1015716371
 GameObject:
   m_ObjectHideFlags: 0
@@ -10633,6 +10635,51 @@ PolygonCollider2D:
       - {x: -1.8199999, y: -2.945}
       - {x: -1.64, y: -2.875}
   m_UseDelaunayMesh: 0
+--- !u!1 &1367712517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1367712519}
+  - component: {fileID: 1367712518}
+  m_Layer: 0
+  m_Name: ObjectPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1367712518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367712517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bad1c0c2483220047a932b7a4cdb0a73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefabs: {fileID: 5135923672780489886, guid: b1d02e23bc8fd464e94234e877b6972c, type: 3}
+--- !u!4 &1367712519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367712517}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1703270945 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1328433971505816683, guid: 7b99eea0fc9decb44992912659deb6ea, type: 3}
@@ -11104,6 +11151,10 @@ PrefabInstance:
       propertyPath: ShipTurret
       value: 
       objectReference: {fileID: 839293038}
+    - target: {fileID: 1328433971505816692, guid: 7b99eea0fc9decb44992912659deb6ea, type: 3}
+      propertyPath: bulletPosition
+      value: 
+      objectReference: {fileID: 839293039}
     - target: {fileID: 1328433971505816693, guid: 7b99eea0fc9decb44992912659deb6ea, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 0.46

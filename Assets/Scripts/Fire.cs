@@ -7,6 +7,7 @@ public class Fire : MonoBehaviour
     public GameObject bullet;
     public float attackInterval;
     private float shotCounter;
+    [SerializeField] private Transform bulletPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,13 @@ public class Fire : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.Space))
         {
-            Instantiate(bullet, transform.position, Quaternion.identity);
+            GameObject bullet = ObjectPool.instance.GetPooledObject();
+            /*Instantiate(bullet, transform.position, Quaternion.identity);*/
+            if(bullet != null)
+            {
+                bullet.transform.position = bulletPosition.position;
+                bullet.SetActive(true);
+            }
             AudioManager.instance.PlaySFX(0);
             shotCounter = attackInterval;
         }

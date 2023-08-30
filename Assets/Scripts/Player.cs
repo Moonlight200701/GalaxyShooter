@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
     public float speed;
     private Vector2 moveInput;
+    [SerializeField] public Transform bulletPosition;
     private void Awake()
     {
         
