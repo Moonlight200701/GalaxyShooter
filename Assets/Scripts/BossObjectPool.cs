@@ -5,8 +5,8 @@ using UnityEngine;
 public class BossObjectPool : MonoBehaviour
 {
     public static BossObjectPool instance;
-    private List<GameObject> poolObjects = new List<GameObject>();
-    private int amountToPool = 50;
+    private List<GameObject> bulletPool;
+    private bool notEnoughBulletInPool = true;
     [SerializeField] private GameObject bulletPrefabs;
 
     private void Awake()
@@ -19,22 +19,27 @@ public class BossObjectPool : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       for(int i = 0; i < amountToPool; i++) 
-        {
-            GameObject obj = Instantiate(bulletPrefabs);
-            obj.SetActive(false);
-            poolObjects.Add(obj);
-        }
+        bulletPool = new List<GameObject>();
     }
 
     // Update is called once per frame
     public GameObject GetPooledObject()
     {
-        for (int i = 0;i < poolObjects.Count; i++)
+        if (bulletPool.Count > 0)
         {
-            if (!poolObjects[i].activeInHierarchy)
-                return poolObjects[i];
+            for (int i = 0; i < bulletPool.Count; i++)
+            {
+                if (!bulletPool[i].activeInHierarchy)
+                    return bulletPool[i];
+            }
+        }
+        if (notEnoughBulletInPool)
+        {
+            GameObject bullet = Instantiate(bulletPrefabs);
+            bullet.SetActive(false);
+            bulletPool.Add(bullet);
+            return bullet;
         }
         return null;
-    }
+    }  
 }

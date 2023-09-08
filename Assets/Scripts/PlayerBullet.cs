@@ -23,9 +23,9 @@ public class PlayerBullet : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Enemy")
+        if(other.tag == "Enemy" || other.tag == "Boss")
         {
-            other.GetComponent<EnemyController>().Damage();
+            /*other.GetComponent<EnemyController>().Damage();*/
             gameObject.SetActive(false);
         }
     }

@@ -10969,6 +10969,18 @@ PolygonCollider2D:
       - {x: -1.185, y: 1.525}
       - {x: -1.175, y: 1.525}
   m_UseDelaunayMesh: 0
+--- !u!114 &1332754810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332754804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 101a5e68ec400ca4d996991141a48f45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1367712517
 GameObject:
   m_ObjectHideFlags: 0
@@ -11564,11 +11576,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3634199520610590625, guid: 976a32df958aca5458103327d511d3fb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.09
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 3634199520610590625, guid: 976a32df958aca5458103327d511d3fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.31
+      value: 3.07
       objectReference: {fileID: 0}
     - target: {fileID: 3634199520610590625, guid: 976a32df958aca5458103327d511d3fb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11605,6 +11617,10 @@ PrefabInstance:
     - target: {fileID: 3634199520610590627, guid: 976a32df958aca5458103327d511d3fb, type: 3}
       propertyPath: m_Name
       value: REDBOSS
+      objectReference: {fileID: 0}
+    - target: {fileID: 3634199520610590627, guid: 976a32df958aca5458103327d511d3fb, type: 3}
+      propertyPath: m_TagString
+      value: Boss
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
